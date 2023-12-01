@@ -23,6 +23,7 @@ int main(void){
             first_num = c - '0';
             you_are_the_first = false;
         }
+        /* assumes last line also has a newline */
         if (c == '\n'){
             last_num = num;
             sum += first_num * 10 + last_num;
