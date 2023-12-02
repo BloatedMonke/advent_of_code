@@ -1,7 +1,7 @@
-#include "dyn_string.h"
-
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "dyn_string.h"
 
 DynString *dyn_string_birth(void){
     DynString *new = malloc(sizeof(*new) + GROW * sizeof(*(new->s)));
