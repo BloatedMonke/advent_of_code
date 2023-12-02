@@ -83,7 +83,7 @@ void dyn_string_part_print(DynString *str, int idx);
 
 int main(int argc, const char *argv[]){
     if (argc != 2){
-        printf("Usage: trebuchet2 INPUT.txt\n");
+        printf("Usage: %s INPUT.txt\n", argv[0]);
         return 1;
     }
     
@@ -145,6 +145,7 @@ int main(int argc, const char *argv[]){
 
     printf("sum of calibration values: %d\n", sum);
 
+    fclose(file);
     dyn_string_kill(str);
     return 0;
 }
