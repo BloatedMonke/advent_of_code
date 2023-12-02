@@ -93,7 +93,7 @@ int main(int argc, const char *argv[]){
         return 2;
     }
     
-    /** Here we parse the input, translate words on the fly
+    /** Here we parse the input, interpret words on the fly
      ** and continue the operation in the same way as part 1
      ** just with a few extra cases.
      **/
