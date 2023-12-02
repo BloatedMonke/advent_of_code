@@ -14,7 +14,7 @@ int main(void){
     char c;
     int sum = 0;
     bool you_are_the_first = true;
-    while (fread(&c, sizeof(char), 1, input)){
+    while (fread(&c, sizeof(c), 1, input)){
         int first_num, last_num, num;
 
         if (isdigit(c))
