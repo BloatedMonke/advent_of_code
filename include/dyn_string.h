@@ -1,6 +1,8 @@
 #ifndef _DYN_STRING_H
 #define _DYN_STRING_H
 
+#include <stdint.h>
+
 /* For dynamic allocations */
 struct DynamicString {
     int32_t  len;

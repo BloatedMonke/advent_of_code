@@ -1,3 +1,8 @@
+#include "dyn_string.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+
 DynString *dyn_string_birth(void){
     DynString *new = malloc(sizeof(*new) + GROW * sizeof(*(new->s)));
     new->len = 0;
