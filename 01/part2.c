@@ -83,7 +83,7 @@ void dyn_string_part_print(DynString *str, int idx);
 
 int main(int argc, const char *argv[]){
     if (argc != 2){
-        printf("Usage: calibration_value_pt2 INPUT.txt\n");
+        printf("Usage: trebuchet2 INPUT.txt\n");
         return 1;
     }
     
