@@ -142,11 +142,11 @@ int main(int argc, const char *argv[]){
         }
         first_num = last_num = num = 0;
     }
+    fclose(file);
+    dyn_string_kill(str);
 
     printf("sum of calibration values: %d\n", sum);
 
-    fclose(file);
-    dyn_string_kill(str);
     return 0;
 }
 
