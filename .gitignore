@@ -1,2 +1,9 @@
 # executables
 *.out
+
+# objects
+*.o
+
+# Problems in parts
+*part1.c
+*part2.c
