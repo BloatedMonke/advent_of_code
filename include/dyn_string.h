@@ -18,9 +18,6 @@ struct DynamicString {
 typedef struct DynamicString
 DynString;
 
-/* A somewhat reasonable grow size */
-#define GROW 64
-
 /* useful string macros */
 #define     lengthof(str) (str.len)
 #define get_lengthof(str) (str->len)

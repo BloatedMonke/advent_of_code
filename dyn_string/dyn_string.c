@@ -3,6 +3,9 @@
 
 #include "dyn_string.h"
 
+/* A somewhat reasonable grow size */
+#define GROW 64
+
 DynString *dyn_string_birth(void){
     DynString *new = malloc(sizeof(*new) + GROW * sizeof(*(new->s)));
     new->len = 0;
