@@ -1,5 +1,5 @@
 VPATH = ../../include ../../dyn_string
 CC = gcc
-CFLAGS = -Wall -Wpedantic -Wextra
 INCLUDES = -I../../include
+CFLAGS = $(INCLUDES) -Wall -Wpedantic -Wextra
  
