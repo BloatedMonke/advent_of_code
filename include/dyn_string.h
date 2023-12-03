@@ -3,6 +3,12 @@
 
 #include <stdint.h>
 
+typedef enum bool {
+    false = 0,
+    true
+}
+bool;
+
 /* For dynamic allocations */
 struct DynamicString {
     int32_t  len;
