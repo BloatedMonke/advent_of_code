@@ -19,10 +19,10 @@ typedef struct DynamicString
 DynString;
 
 /* useful string macros */
-#define     lengthof(str) (str.len)
-#define get_lengthof(str) (str->len)
-#define      str_arr(str) (str.s)
-#define  get_str_arr(str) (str->s)
+#define     lengthof(str) ((str).len)
+#define get_lengthof(str) ((str)->len)
+#define      str_arr(str) ((str).s)
+#define  get_str_arr(str) ((str)->s)
 
 /* "Methods" */
 DynString *dyn_string_birth(void);
