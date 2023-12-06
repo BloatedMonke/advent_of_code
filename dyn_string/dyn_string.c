@@ -6,6 +6,12 @@
 /* A somewhat reasonable grow size */
 #define GROW 64
 
+#if defined(_MSC_VER) || defined(__MINGW32__)
+#define EOL '\r'
+#else
+#define EOL '\n'
+#endif
+
 DynString *dyn_string_birth(void){
     DynString *new = malloc(sizeof(*new) + GROW * sizeof(*(new->s)));
     new->len = 0;
@@ -29,18 +35,15 @@ void dyn_string_kill(DynString *dstr){
 }
 
 bool dyn_string_get_file_line(DynString **dstr, FILE *file){
-    if (*dstr){
-        dyn_string_kill(*dstr);
-        *dstr = dyn_string_birth();
-    }
-    else
-        *dstr = dyn_string_birth();
+    *dstr = dyn_string_birth();
 
     char c;
     bool break_loop = false;
     while (fread(&c, sizeof(c), 1, file)){
-        if (c == '\n'){
+        if (c == EOL){
             break_loop = true;
+            if (EOL == '\r')
+                fseek(file, 1, SEEK_CUR);
             break;
         }
         dyn_string_append(dstr, c);
