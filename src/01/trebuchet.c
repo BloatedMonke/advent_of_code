@@ -149,6 +149,7 @@ uint32_t part_2(FILE *file){
             test_num = MISSING;
         }
         first_num = last_num = num = 0;
+        dyn_string_kill(str);
     }
     dyn_string_kill(str);
     return sum;
