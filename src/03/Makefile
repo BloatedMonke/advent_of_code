@@ -1,28 +1,22 @@
 include ../vars.mk
-HEADERS = dyn_string.h
 SRC = gearatio.c dyn_string.c
-OBJS = gearatio.o dyn_string.o
-DBGOBJS = dbggearatio.o dbgdyn_string.o
+OBJS = gearatio.o
+DBGOBJS = dbggearatio.o
+HEADERS =
+.DEFAULT_GOAL = gearatio
 
-gearatio: $(SRC) $(HEADERS) $(OBJS)
-	$(CC) $(CFLAGS) -o $@.out $(OBJS)
+include ../utils.mk
 
-debug: $(SRC) $(HEADERS) $(DBGOBJS)
-	$(CC) $(DBGFLAGS) -o $@.out $(DBGOBJS)
+gearatio: $(SRC) $(HEADERS) $(COMMON_HEADERS) $(OBJS) $(COMMON_OBJS)
+	$(CC) $(BUILD_FLAGS) -o $@.out $(OBJS) $(COMMON_OBJS)
 
-gearatio.o: gearatio.c $(SRC) $(HEADERS)
-dbggearatio.o: gearatio.c $(SRC) $(HEADERS)
-	$(CC) $(DBGFLAGS) -o $@ -c $<
+debug: $(SRC) $(HEADERS) $(COMMON_HEADERS) $(DBGOBJS) $(COMMON_DBGOBJS)
+	$(CC) $(DBGFLAGS) -o $@.out $(DBGOBJS) $(COMMON_DBGOBJS)
 
-dyn_string.o: dyn_string.c $(SRC) $(HEADERS)
-dbgdyn_string.o: dyn_string.c $(SRC) $(HEADERS)
+gearatio.o: gearatio.c $(SRC) $(HEADERS) $(COMMON_HEADERS)
+dbggearatio.o: gearatio.c $(SRC) $(HEADERS) $(COMMON_HEADERS)
 	$(CC) $(DBGFLAGS) -o $@ -c $<
 
 .PHONY: clean
 clean:
-	if [ -f dbggearatio.o ]; \
-		then rm $(DBGOBJS); \
-	fi;
-	if [ -f gearatio.o ]; \
-		then rm $(OBJS); \
-	fi;
+	-rm *.o
