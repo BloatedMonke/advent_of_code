@@ -52,15 +52,15 @@ bool dyn_string_get_file_line(DynString **dstr, FILE *file){
 }
 
 void dyn_string_print(DynString *str){
-    printf("str: ");
+    printf("str: \"");
     for (int i = 0; i < get_lengthof(str); ++i)
         putchar(get_str_arr(str)[i]);
-    puts("");
+    puts("\"");
 }
 
 void dyn_string_part_print(DynString *str, int idx){
-    printf("str[%d:]: ", idx);
+    printf("str[%d:]: \"", idx);
     for (int i = idx; i < get_lengthof(str); ++i)
         putchar(get_str_arr(str)[i]);
-    puts("");
+    puts("\"");
 }
