@@ -1,5 +1,6 @@
 # executables
 *.out
+*.exe
 
 # objects
 *.o
@@ -8,5 +9,12 @@
 *part1.c
 *part2.c
 
-# debug
+# debug files
 *debug*
+dbg*
+
+# some txt files
+*.txt
+!input.txt
+!smaller.txt
+!another.txt
