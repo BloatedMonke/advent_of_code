@@ -61,11 +61,11 @@ uint32_t solve(FILE *file, int my_len){
         
         uint32_t win_hashmap[100] = {0};
         const char * const s = get_str_arr(str);
-        int r = 4;
-        while (s[r] != ':') ++r;
+        int i = 4;
+        while (s[i] != ':') ++i;
         
-        int i, xcount = 0;
-        for (i = 2 + r; s[i] != '|'; ++i){
+        int xcount = 0;
+        for (; s[i] != '|'; ++i){
             if (isdigit(s[i])){
                 int num_width = str_num_width(s + i, get_lengthof(str) - i);
                 int x = strtoint(s + i, num_width);
