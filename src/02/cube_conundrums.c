@@ -3,8 +3,6 @@
 #include "dyn_string.h"
 #include "utility.h"
 
-#define max(a, b) ((a) > (b) ? (a): (b))
-
 uint32_t solve(FILE *file, int max_red, int max_green, int max_blue);
 uint32_t solve2(FILE *file);
 
