@@ -3,8 +3,8 @@
 #include "dyn_string.h"
 #include "utility.h"
 
-#ifndef FILE_LENGTH
-#define FILE_LENGTH 198
+#ifndef MAX_CARDS
+#define MAX_CARDS 198
 #endif
 #ifndef MAX_LEN
 #define MAX_LEN 25
@@ -46,7 +46,7 @@ struct solution solve(FILE *file){
     
     int sum1 = 0;
     
-    uint32_t card_hashmap[FILE_LENGTH] = {0};    
+    uint32_t card_hashmap[MAX_CARDS] = {0};    
     int card = 0;
     int cc = 0;
     
